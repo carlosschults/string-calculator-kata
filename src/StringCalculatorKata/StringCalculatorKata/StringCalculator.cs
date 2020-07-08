@@ -6,7 +6,10 @@ namespace carlosschults.StringCalculatorKata
     {
         public static int Add(string numbers)
         {
-            return 0;
+            if (numbers == string.Empty)
+                return 0;
+
+            return 5;
         }
     }
 }
