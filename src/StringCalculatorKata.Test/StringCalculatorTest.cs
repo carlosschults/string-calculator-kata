@@ -9,5 +9,11 @@ namespace carlosschults.StringCalculatorKata.Test
         {
             Assert.AreEqual(0, StringCalculator.Add(string.Empty));
         }
+
+        [Test]
+        public void Add_StringContainingSingleNumber_ReturnsTheNumberItself()
+        {
+            Assert.AreEqual(5, StringCalculator.Add("5"));
+        }
     }
 }
