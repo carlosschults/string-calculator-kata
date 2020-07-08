@@ -15,5 +15,13 @@ namespace carlosschults.StringCalculatorKata.Test
         {
             Assert.AreEqual(5, StringCalculator.Add("5"));
         }
+
+        [Test]
+        public void Add_TwoNumbersSeparatedByComma_ReturnsTheirSum()
+        {
+            var numbers = "7,8";
+            var expectedResult = 15;
+            Assert.AreEqual(expectedResult, StringCalculator.Add(numbers));
+        }
     }
 }
