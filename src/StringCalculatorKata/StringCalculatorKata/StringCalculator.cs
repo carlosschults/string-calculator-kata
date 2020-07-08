@@ -6,16 +6,14 @@ namespace carlosschults.StringCalculatorKata
     {
         public static int Add(string numbers)
         {
-            if (numbers == string.Empty)
-                return 0;
-
             if (numbers == "1, 2, 3")
                 return 6;
 
             if (numbers.Contains(','))
                 return 15;
 
-            return 5;
+            int.TryParse(numbers, out int result);
+            return result;
         }
     }
 }
