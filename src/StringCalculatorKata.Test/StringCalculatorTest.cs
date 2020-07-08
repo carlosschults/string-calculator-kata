@@ -31,5 +31,16 @@ namespace carlosschults.StringCalculatorKata.Test
             var expected = 6;
             Assert.AreEqual(expected, StringCalculator.Add(numbers));
         }
+
+        [TestCase("1,2,3,4", 10)]
+        [TestCase("8,7,20", 35)]
+        [TestCase("5,0,4,1001", 9)]
+        [TestCase("5,0,4,1000", 1009)]
+        [TestCase("26,6,90", 122)]
+        public void Add_MoreThanThreeNumbersSeparatedByComma_ReturnsTheirSum(
+            string input, int result)
+        {
+            Assert.AreEqual(result, StringCalculator.Add(input));
+        }
     }
 }
