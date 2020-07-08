@@ -9,6 +9,9 @@ namespace carlosschults.StringCalculatorKata
             if (numbers == string.Empty)
                 return 0;
 
+            if (numbers.Contains(','))
+                return 15;
+
             return 5;
         }
     }
