@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 
 namespace carlosschults.StringCalculatorKata.Test
 {
@@ -41,6 +42,14 @@ namespace carlosschults.StringCalculatorKata.Test
             string input, int result)
         {
             Assert.AreEqual(result, StringCalculator.Add(input));
+        }
+
+        [TestCase("1,2,3,4,5,-5")]
+        [TestCase("-1,1,2,9")]
+        [TestCase("5,6,8,-5")]
+        public void Add_StringContainingNegativeNumbers_Throws(string numbers)
+        {
+            Assert.Throws<ArgumentException>(() => StringCalculator.Add(numbers));
         }
     }
 }
