@@ -6,13 +6,16 @@ namespace carlosschults.StringCalculatorKata
     {
         public static int Add(string numbers)
         {
-            if (numbers == "1, 2, 3")
-                return 6;
+            var parts = numbers.Split(',');
+            var result = 0;
+            
+            foreach (var part in parts)
+            {
+                int.TryParse(part, out int number);
+                if (number <= 1000)
+                    result += number;
+            }
 
-            if (numbers.Contains(','))
-                return 15;
-
-            int.TryParse(numbers, out int result);
             return result;
         }
     }
